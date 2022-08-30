@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Map</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <div class="topnav">
+            
+        </div>
+
+  
+
+        <div class="form" style="color:black">
+                                  
+            <select id="rooms" name="rooms">
+                <option value="1bhk">1 Bhk</option>
+                <option value="2bhk">2 Bhk</option>
+                <option value="3bhk">3 Bhk</option>
+            </select>
+
+            <select id="type" name="type">
+                <option value="Rent">Rent</option>
+                <option value="Selling">Selling</option>
+            </select>
+            
+            <!-- <select id="locality" name="locality">
+                <option value="Sarjapur">Sarjapur</option>
+                <option value="Whitefield">Whitefield</option>
+                <option value="Banashankari">Banashankari</option>              
+                <option value="Jayanagar">Jayanagar</option>
+                <option value="Electronic City">Electronic City</option>
+                <option value="Yelahanka">Yelahanka</option>     
+            </select>
+             -->
+
+             <!-- not in use anymore, these 3 lines-->
+            <!-- magicbricks<input type="checkbox" id="source1" name="source 1" value="magicbricks">
+            commonfloor<input type="checkbox" id="source2" name="source 2" value="commonfloor">
+            makaan<input type="checkbox" id="source3" name="source 3" value="maakan"> -->
+
+            <span><input id = "submit-file" type = "submit" value = "submit" onclick="refresh()"/></span>
+            <div>
+
+            <select id="Maptype" name="Maptype">
+                <option value="HeatMap">HeatMap</option>
+                <option value="Marker">Markers</option>
+                   
+            </select>
+
+
+            <!-- This one can be used IMPORTANT-->
+
+            <select id="rec_mode"> Choose Grid </select>
+
+            <script>
+                
+            var j = []
+
+            for (var q =1018; q<1324; q++)
+            {
+                j.push(q)
+            }
+
+            var options = '';
+            options+='<option value= "all" >  All  </option>';
+            for (var i = 0; i < j.length; i++)
+            {
+                options += '<option value="' + j[i]+ '">' + j[i] + '</option>';
+            }
+
+            // console.log(options)
+
+            $("#rec_mode").html(options);
+            </script>
+            
+            </div>
+            </div>
+
+
+            <p id="demo"></p>
+    </head>
+
+    <body>
+        <div id="map"></div>
+        <link rel="stylesheet" type="text/css" href="./index.css" />
+        <script type="text/javascript" src="index.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYrbp34OohAHsX1cub8ZeHlMEFajv15fY&libraries=visualization&callback=startMap"></script>
+         <!--Alternate key --> <!-- AIzaSyACMu_9PaPY5MWbRK_n_KFcXn3eOij6XLg -->
+        
+        
+    </body>
+</html>
